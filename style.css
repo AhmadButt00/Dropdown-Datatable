@@ -1,0 +1,10 @@
+select:invalid { color: gray; }
+#container{
+    margin-right:10px;
+    float:left;
+}
+body{
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
