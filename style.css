@@ -1,10 +1,14 @@
-select:invalid { color: gray; }
-#container{
-    margin-right:10px;
-    float:left;
-}
-body{
-    width: 100%;
+html {
+    height: 100%;
+  }
+  body{
+    margin: 0;
     height: 100%;
     font-family: 'Roboto', sans-serif;
+    
+}
+select:invalid { color: gray; }
+#container{
+    display: flex;
+    flex-direction: column;
 }

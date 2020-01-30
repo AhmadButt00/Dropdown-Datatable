@@ -147,6 +147,11 @@ const keyify = (obj, prefix = '') =>
     }
   }, []);
   function getResults(obj){
+    var employeeCityDiv = document.createElement('div');
+    employeeCityDiv.id = "employeeCityDiv";
+    employeeCityDiv.style.display = "flex";
+    employeeCityDiv.style.marginLeft = "450px";
+    employeeCityDiv.style.position = "absolute";
     var output = keyify(obj);
     var results = [];
     var employeeName = [];
@@ -176,14 +181,14 @@ const keyify = (obj, prefix = '') =>
     {   
         salary.push(results[i])
     }
-    var employeeCityDiv = document.createElement('div');
-    employeeCityDiv.id = "employeeCityDiv";
-    employeeCityDiv.style.marginLeft = "32%";
-    employeeCityDiv.style.marginRight = "30px";
-    employeeCityDiv.style.height = "200px";
-    employeeCityDiv.style.alignItems = "center";
-    employeeCityDiv.style.top = "0px";
-    employeeCityDiv.style.zIndex = "100";
+    
+    // employeeCityDiv.style.marginLeft = "400px";
+
+    // employeeCityDiv.style.marginRight = "30px";
+    // employeeCityDiv.style.height = "200px";
+    // employeeCityDiv.style.alignItems = "center";
+    // employeeCityDiv.style.top = "0px";
+    // employeeCityDiv.style.zIndex = "100";
     var table = document.createElement('table');
     table.id = "employeeCityTable"
     table.classList.add("table");
@@ -238,12 +243,10 @@ const keyify = (obj, prefix = '') =>
     $('#employeeCityTable').DataTable()
     .rows().invalidate('data')
     .draw(false);
-    
   }
 var div = document.getElementById('container');
-div.style.width = "25%";
-div.style.height = "200px";
-div.style.float = "left";
+
+div.style.width = "400px";
 function renderCityData(obj){
     var citiesObj = obj;
     var citiesArr = Object.values(citiesObj);
@@ -255,7 +258,6 @@ function renderCityData(obj){
     });
     createDropTable(citiesArr,"cityTable");
     getResults(citywiseSoftwareHouses);
-   
 }
 renderCityData(cities);
 function createDropTable(arr,id){
@@ -286,7 +288,6 @@ function createDropTable(arr,id){
         cityRow.appendChild(cityName);
         table.appendChild(cityRow)
     });
-    document.body.style.textAlign = "center";
     div.appendChild(table);
     document.body.appendChild(div);    
     // document.body.appendChild(table);
@@ -495,6 +496,7 @@ function createDataTable(){
     $('#employeeTable').DataTable()
     .rows().invalidate('data')
     .draw(false);
+   
 }
 
 function createTable(emp){
@@ -508,8 +510,11 @@ function createTable(emp){
         }
     var employeeDiv = document.createElement('div');
     employeeDiv.id = "employeeDiv";
-    employeeDiv.style.marginLeft = "32%";
-    employeeDiv.style.marginRight = "30px";
+    employeeDiv.style.display = "flex";
+    employeeDiv.style.marginLeft = "450px";
+    employeeDiv.style.position = "absolute";
+    // employeeDiv.style.marginLeft = "400px";
+    // employeeDiv.style.marginRight = "0px";
     // employeeDiv.style.height = "200px";
     var employeeData = emp;
     console.log(employeeData)
